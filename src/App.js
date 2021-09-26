@@ -17,7 +17,7 @@ function App() {
   const [formValue, setFormValue] = React.useState("");
   const [mining, setMining] = React.useState(false);
 
-  const contractAddress = "0xefadB6d5bbdE92475E0E5919d1ab5628ed0941F4";
+  const contractAddress = "0xab536802B035F15830F6c4B06834a4aC2bf48f86";
   const contractABI = abi.abi;
 
   React.useEffect(() => { //runs when app is launched 
