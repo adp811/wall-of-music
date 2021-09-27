@@ -3,9 +3,9 @@ import { ethers } from "ethers";
 import './App.css';
 import abi from "./utils/MusicPortal.json";
 import { ChakraProvider } from "@chakra-ui/react";
-import { VStack, Grid, Heading, Box, Spinner } from "@chakra-ui/react";
-import { Button, Input, InputGroup, InputLeftElement } from "@chakra-ui/react";
-import { FaLink } from "react-icons/fa";
+import { VStack, Flex, Spacer, Grid, Heading, Box, Spinner, Link } from "@chakra-ui/react";
+import { Button, IconButton, Input, InputGroup, InputLeftElement } from "@chakra-ui/react";
+import { FaLink, FaEthereum, FaGithubAlt } from "react-icons/fa";
 
 //components 
 import Song from "./components/Song";
@@ -23,7 +23,6 @@ function App() {
   React.useEffect(() => { //runs when app is launched 
     walletConnected();
   }, []);
-
 
   const sendSong = async () => {
 
@@ -152,6 +151,7 @@ function App() {
   }
 
   const handleChange = (event) => setFormValue(event.target.value);
+  const showNetworkInfo = () => alert('This Web3 app is currently on the Rinkeby Test Network, make sure your Metamask Wallet is set to the Rinkeby Test Network!');
 
   return (
     <ChakraProvider>
@@ -161,6 +161,28 @@ function App() {
         w='100%' 
         alignItems='center' 
         spacing='20px'>
+
+        <Flex w='100%'>
+
+          <Button 
+            leftIcon={<FaEthereum />} 
+            colorScheme='gray' 
+            variant='solid'
+            onClick={showNetworkInfo} >  
+            Rinkeby Test Network
+          </Button>
+
+          <Spacer />
+          
+          <Link href={'https://github.com/adp811'} isExternal>
+            <IconButton
+              icon={<FaGithubAlt />}
+              isRound='true'
+              size='lg' >
+            </IconButton>
+          </Link>
+
+        </ Flex>
 
         < br />
 
@@ -177,8 +199,8 @@ function App() {
           color='black'
           fontWeight='semibold'>
 
-          Hi 👋🏽👋🏽!! My name is Aryan and I love music! Connect your wallet and send me your favorite tune through a Spotify share link. Each time you send a song, you might have the chance to win some 
-          free Ethereum!! Feel free to check out all the songs sent so far down below. Thank you and stay jammin!
+          Hi 👋🏽👋🏽!! My name is Aryan and I love music! Connect your wallet and send me your favorite tune through a Spotify share link. 
+          Feel free to check out all the songs sent so far down below. Thank you and stay jammin!
         </Box>
 
         <br />
@@ -197,7 +219,7 @@ function App() {
             borderWidth='3px'
             bgGradient='linear(to-l, #29323c, #485563)' 
             _hover={{
-              bgGradient: 'linear(to-t, #43e97b, #38f9d7)',
+              bgGradient: 'linear(to-r, #c471f5, #fa71cd)',
             }}
             onClick={sendSong}>
             
@@ -210,7 +232,7 @@ function App() {
               children={<FaLink />}/>
             ` <Input placeholder="paste spotify link here"
                     borderColor='black'
-                    focusBorderColor='#43e97b' 
+                    focusBorderColor='#c471f5' 
                     borderWidth='3px'
                     value={formValue}
                     onChange={handleChange} />

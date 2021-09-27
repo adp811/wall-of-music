@@ -1,8 +1,7 @@
 import React from "react";
 import axios from "axios";
-import { Box, Center, useColorModeValue, Heading, Text, Stack, Image, Link } from '@chakra-ui/react';
+import { Box, Center, useColorModeValue, Text, Stack, Image, Link } from '@chakra-ui/react';
 import { encode as base64_encode } from 'base-64';
-
 
 const Song = ({url, address, timestamp}) => {
     
@@ -56,6 +55,7 @@ const Song = ({url, address, timestamp}) => {
                 role={'group'}
                 p={6}
                 maxW={'460px'}
+                minH={'475px'}
                 w={'full'}
                 bg={useColorModeValue('white', 'gray.800')}
                 boxShadow={'xl'}
@@ -100,10 +100,15 @@ const Song = ({url, address, timestamp}) => {
 
                 <Stack pt={10} align={'center'}>
                     
-                    <Text color={'gray.500'} fontSize={'sm'} textTransform={'uppercase'}>
+                    <Text 
+                        color={'gray.500'} 
+                        textTransform={'uppercase'}>
                         {artistName}
                     </Text>
-                    <Text fontSize={'2xl'} fontFamily={'body'} fontWeight={500} maxW={'300px'} align={'center'} >
+                    <Text 
+                        fontSize={ songName.length < 25 ? '2xl' : 'lg' } 
+                        fontWeight={500} maxW={'300px'} 
+                        h={'40px'} align={'center'} >
                         {songName}
                     </Text>
 
