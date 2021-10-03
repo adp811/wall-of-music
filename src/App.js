@@ -191,7 +191,7 @@ function App() {
         <br />
 
         <Box
-          w='60%' 
+          w='54%' 
           borderColor='black' 
           borderWidth='3px' 
           p='4' 
@@ -200,7 +200,7 @@ function App() {
           fontWeight='semibold'>
 
           Hi 👋🏽👋🏽!! My name is Aryan and I love music! Connect your wallet and send me your favorite tune through a Spotify share link. 
-          Feel free to check out all the songs sent so far down below. Thank you and stay jammin!
+          Once your wallet is connected, you will also see all the songs sent so far! Feel free to check out any song by simply clicking on it. Thank you and stay jammin!
         </Box>
 
         <br />
@@ -250,7 +250,7 @@ function App() {
             borderWidth='3px'
             bgGradient='linear(to-l, #29323c, #485563)' 
             _hover={{
-              bgGradient: 'linear(to-r, #43e97b, #38f9d7)',
+              bgGradient: 'linear(to-r, #c471f5, #fa71cd)',
             }}
             onClick={connectWallet}>
 
