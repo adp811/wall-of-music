@@ -6,6 +6,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import { VStack, Flex, Spacer, Grid, Heading, Box, Spinner, Link } from "@chakra-ui/react";
 import { Button, IconButton, Input, InputGroup, InputLeftElement } from "@chakra-ui/react";
 import { FaLink, FaEthereum, FaGithubAlt } from "react-icons/fa";
+import Footer from "./components/Footer/Footer";
 
 //components 
 import Song from "./components/Song";
@@ -248,7 +249,7 @@ function App() {
             color='white' 
             borderColor='black' 
             borderWidth='3px'
-            bgGradient='linear(to-l, #29323c, #485563)' 
+            bgColor='#000000'
             _hover={{
               bgGradient: 'linear(to-r, #c471f5, #fa71cd)',
             }}
@@ -278,6 +279,8 @@ function App() {
         </Grid>
 
       </VStack>
+
+      <Footer />
 
     </ChakraProvider>
     
